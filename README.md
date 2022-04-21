@@ -52,7 +52,6 @@ This repository includes the source code of the React Web Component of a Financi
 
 ## Verification of the Configuration
 - In order to make sure React Application both connect to the Realm Application Services and MongoDB Atlas, check the followings out:
-	- dsadsa
-	- dsadsadsadsa
+	- Check the "Latest Information" section on the main page. After a few seconds, some stats need to be displayed
 
 > Written with [StackEdit](https://stackedit.io/).
