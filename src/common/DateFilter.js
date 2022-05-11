@@ -48,14 +48,14 @@ const dropDownOptionForDateFilterValues = [
 
                             <Popup hideOnScroll flowing hoverable 
                             trigger={<Form.Button fluid icon labelPosition='left' color='green' size="small" label="&nbsp;"><Icon name='info circle'/>Data Source Info</Form.Button>}>
-                                <p><b>Last hour:</b> Brings only last hour of data from MongoDB Atlas Cluster</p>
-                                <p><b>Last 3 Hours:</b> Brings only last 3 hours of data from MongoDB Atlas Cluster</p>
-                                <p><b>Last 12 Hours:</b> Brings only last 12 hours of data from MongoDB Atlas Cluster</p>
-                                <p><b>Last 24 Hours:</b> Brings only last 24 hours of data from MongoDB Atlas Cluster</p>
-                                <p><b>Last 3 Days:</b> Brings only last 72 (24*3) hours of data from MongoDB Atlas Cluster</p>
-                                <p><b>Last 7 Days:</b> Brings only last 168 (24*7) hours of data both from MongoDB Atlas Cluster and Online Archive</p>
-                                <p><b>Last 15 Days:</b> Brings only last 360 (24*15) hours of data both from MongoDB Atlas Cluster and Online Archive</p>
-                                <p><b>Last 30 Days:</b> Brings only last 720 (24*30) hours of data both from MongoDB Atlas Cluster and Online Archive</p>
+                                <p><b>Last hour:</b> Run the analysis in only the last hour of data</p>
+                                <p><b>Last 3 Hours:</b> Run the analysis in only the last 3 hours of data</p>
+                                <p><b>Last 12 Hours:</b> Run the analysis in only the last 12 hours of data</p>
+                                <p><b>Last 24 Hours:</b> Run the analysis in only the last 24 hours of data</p>
+                                <p><b>Last 3 Days:</b> Run the analysis in only the last 72 hours of data</p>
+                                <p><b>Last 7 Days:</b> Run the analysis in only the last 168 hours of data</p>
+                                <p><b>Last 15 Days:</b> Run the analysis in only the last 360 hours of data</p>
+                                <p><b>Last 30 Days:</b> Run the analysis in only the last 720 hours of data</p>
                             </Popup>
                         </Form.Group>
                     </Form.Field>
