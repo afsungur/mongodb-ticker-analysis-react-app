@@ -58,6 +58,10 @@ Please review [the other repository](https://github.com/afsungur/mongodb-ticker-
 
 ## Building React Application
 
+- After you've completed your changes in this React Application, you can build it as shown in the below:
+	- ![Build React App](images/built.png) 
+- After you've built the app, you can upload the files under the build/ directory into [Atlas App Services Hosting](https://www.mongodb.com/docs/atlas/app-services/hosting/).
+
 
 ## Example Screenshots
 
@@ -77,5 +81,3 @@ Please review [the other repository](https://github.com/afsungur/mongodb-ticker-
 ### Stochastic Oscillator
 ![Stochastic Oscillator](images/stochasticoscillator.png)
 
-
-> Written with [StackEdit](https://stackedit.io/).
