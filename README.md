@@ -2,13 +2,13 @@
 
 ## Contents
 
-[Intro](https://github.com/afsungur/mongodb-ticker-analysis-react-app#intro)
-[Resources to review before working on this project](https://github.com/afsungur/mongodb-ticker-analysis-react-app#resources-to-review-before-working-on-this-project)
-[Pre-Requisites of Running the React Application](https://github.com/afsungur/mongodb-ticker-analysis-react-app#pre-requisites-of-running-the-react-application)
-[Running the React Application](https://github.com/afsungur/mongodb-ticker-analysis-react-app#running-the-react-application)
-[Verification of the Configuration](https://github.com/afsungur/mongodb-ticker-analysis-react-app#verification-of-the-configuration)
-[Building React Application](https://github.com/afsungur/mongodb-ticker-analysis-react-app#building-react-application)
-[Example Screenshots](https://github.com/afsungur/mongodb-ticker-analysis-react-app#example-screenshots)
+- [Intro](https://github.com/afsungur/mongodb-ticker-analysis-react-app#intro)
+- [Resources to review before working on this project](https://github.com/afsungur/mongodb-ticker-analysis-react-app#resources-to-review-before-working-on-this-project)
+- [Pre-Requisites of Running the React Application](https://github.com/afsungur/mongodb-ticker-analysis-react-app#pre-requisites-of-running-the-react-application)
+- [Running the React Application](https://github.com/afsungur/mongodb-ticker-analysis-react-app#running-the-react-application)
+- [Verification of the Configuration](https://github.com/afsungur/mongodb-ticker-analysis-react-app#verification-of-the-configuration)
+- [Building React Application](https://github.com/afsungur/mongodb-ticker-analysis-react-app#building-react-application)
+- [Example Screenshots](https://github.com/afsungur/mongodb-ticker-analysis-react-app#example-screenshots)
 
 ## Intro
 This repository includes the source code of the React Web Component of an [Atlas App Services Application](https://www.mongodb.com/docs/atlas/app-services/) which is an end-to-end application to analyze financial market data. This React App connects to MongoDB Atlas through [MongoDB Realm WEB SDK](https://www.mongodb.com/docs/realm/web/). 
