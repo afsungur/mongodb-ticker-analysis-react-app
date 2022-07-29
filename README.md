@@ -91,3 +91,5 @@ Please review [the other repository](https://github.com/afsungur/mongodb-ticker-
 ### Stochastic Oscillator
 ![Stochastic Oscillator](images/stochasticoscillator.png)
 
+### Rule Adding
+![Rule Adding](images/ruleadd.png)
