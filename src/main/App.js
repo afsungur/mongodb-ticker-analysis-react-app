@@ -1,15 +1,14 @@
 import React from 'react';
 import 'fomantic-ui-css/semantic.css';
 import * as Realm from "realm-web";
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect} from 'react-router-dom';
 // import Home from './Home';
 import TickerAnalysisComponent from '../individual-currency/TickerAnalysisComponent'
 import Rules from '../rules/Rules'
-
+import ReportLastPrices from '../report/ReportLastPrices';
+import TopMenu from './TopMenu'
+import { Container } from 'semantic-ui-react';
 const app = new Realm.App({ id: `${window['getConfig'].REALM_APP_ID}` });
-
-const styles = {width: "200px"};
-const logoStyles = {width: "100px"}
 
 function Login({ setUser }) {
   const loginAnonymous = async () => {
@@ -22,39 +21,6 @@ function Login({ setUser }) {
   return (<div>Logging in...</div>)
 }
 
-function Menu ({ user }) {
-  return (
-    <div className="ui container">
-      <div className="ui massive menu">
-        <a className="item" href="/">
-          Home
-        </a>
-        <a className="item" href="/currency">
-          Currency Analysis
-        </a>
-        
-        <a className="item" href="/rules">
-          Rules
-        </a>
-        <div className="right menu">
-          <a className="item" href="https://cloud.mongodb.com" target="_blank" rel="noreferrer">
-            <img alt="" src="/mdblogo.svg" style={styles}/>          
-            
-          </a>
-          <a className="item" href="https://docs.mongodb.com/manual/core/timeseries-collections/" target="_blank" rel="noreferrer">
-            <img alt="" src="/ts.avif" style={logoStyles}></img>
-          </a>
-        </div>
-      </div>
-      <Switch> {/* The Switch decides which component to show based on the current URL.*/}
-      <Route exact path='/'><Redirect to="/currency" /></Route>
-      <Route exact path='/currency' render={(props) => <TickerAnalysisComponent user={user} {...props} /> } ></Route>
-      <Route exact path='/rules' render={(props) => <Rules user={user} {...props} /> } ></Route>
-      </Switch>
-      <div style={{display:'none'}}>User id: {user.id}</div>
-    </div>
-  )
-}
 
 const App = () => {
 
@@ -69,7 +35,18 @@ const App = () => {
     return (
       <div>
         
-          {user ? <Menu user={user}/> : <Login setUser={setUser} />}
+          {user ? 
+          <Container>
+            <TopMenu user={user}/> 
+            <Switch> {/* The Switch decides which component to show based on the current URL.*/}
+            <Route exact path='/'><Redirect to="/currency" /></Route>
+            <Route exact path='/currency' render={(props) => <TickerAnalysisComponent user={user} {...props} /> } ></Route>
+            <Route exact path='/rules' render={(props) => <Rules user={user} {...props} /> } ></Route>
+            <Route exact path='/reportLastPrices' render={(props) => <ReportLastPrices user={user} {...props} /> } ></Route>
+            </Switch>
+            <div style={{display:'none'}}>User id: {user.id}</div>
+            </Container>
+          : <Login setUser={setUser} />}
           
       </div>
     );
