@@ -34,6 +34,8 @@ class TopMenu extends React.Component {
           <Dropdown item text='Reports'>
             <Dropdown.Menu>
               <Dropdown.Item href="/reportLastPrices">Last Prices</Dropdown.Item>
+              <Dropdown.Item href="/reportHourlyWinnersAndLosers">Hourly Winners-Losers</Dropdown.Item>
+
             </Dropdown.Menu>
           </Dropdown>
         
