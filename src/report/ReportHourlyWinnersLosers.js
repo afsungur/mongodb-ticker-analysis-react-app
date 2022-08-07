@@ -90,7 +90,7 @@ class ReportHourlyWinnersAndLosers extends React.Component {
                           ]
                         }, '$prevClose'
                       ]
-                    }, 4
+                    }, 2
                   ]
                 }
               }
@@ -169,13 +169,13 @@ class ReportHourlyWinnersAndLosers extends React.Component {
                     <Table.Row>
                         <Table.HeaderCell>Symbol</Table.HeaderCell>
                         <Table.HeaderCell>Close</Table.HeaderCell>
-                        <Table.HeaderCell>+ %</Table.HeaderCell>
+                        <Table.HeaderCell>%</Table.HeaderCell>
                         <Table.HeaderCell>Symbol</Table.HeaderCell>
                         <Table.HeaderCell>Close</Table.HeaderCell>
-                        <Table.HeaderCell>+ %</Table.HeaderCell>
+                        <Table.HeaderCell>%</Table.HeaderCell>
                         <Table.HeaderCell>Symbol</Table.HeaderCell>
                         <Table.HeaderCell>Close</Table.HeaderCell>
-                        <Table.HeaderCell>+ %</Table.HeaderCell>
+                        <Table.HeaderCell>%</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
                 
@@ -188,13 +188,13 @@ class ReportHourlyWinnersAndLosers extends React.Component {
                                             <Table.Cell>{moment(item._id).local().format()}</Table.Cell>
                                             <Table.Cell>{item.showN[0][0]}</Table.Cell>
                                             <Table.Cell>{item.showN[0][1]}</Table.Cell>
-                                            <Table.Cell>{item.showN[0][2]}</Table.Cell>
+                                            <Table.Cell>{item.showN[0][2] > 0 ? "+"+item.showN[0][2] : item.showN[0][2]}</Table.Cell>
                                             <Table.Cell>{item.showN[1][0]}</Table.Cell>
                                             <Table.Cell>{item.showN[1][1]}</Table.Cell>
-                                            <Table.Cell>{item.showN[1][2]}</Table.Cell>
+                                            <Table.Cell>{item.showN[1][2] > 0 ? "+"+item.showN[1][2] : item.showN[1][2]}</Table.Cell>
                                             <Table.Cell>{item.showN[2][0]}</Table.Cell>
                                             <Table.Cell>{item.showN[2][1]}</Table.Cell>
-                                            <Table.Cell>{item.showN[2][2]}</Table.Cell>
+                                            <Table.Cell>{item.showN[2][2] > 0 ? "+"+item.showN[2][2] : item.showN[2][2]}</Table.Cell>
                                         </Table.Row> 
                                 ) 
                             : null
