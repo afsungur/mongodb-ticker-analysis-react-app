@@ -1,6 +1,6 @@
 import React from 'react';
 import 'fomantic-ui-css/semantic.css';
-import { Button, Segment, Icon, Table, Dimmer, Loader, Input, Accordion } from 'semantic-ui-react';
+import { Button, Segment, Icon, Table, Dimmer, Loader, Accordion } from 'semantic-ui-react';
 import moment from 'moment'
 import SyntaxHighlighter from 'react-syntax-highlighter/dist/esm/default-highlight';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -54,9 +54,6 @@ class ReportHourlyWinnersAndLosers extends React.Component {
     UNSAFE_componentWillMount() { this.fetchHourlyWinnerLoser() }
 
     render () {
-
-        let indexObject = {"symbol":1, "time": -1}
-        let indexObjectStr = JSON.stringify(indexObject, null ,4)
 
         let aggregationPipelineQuery = [
             {
