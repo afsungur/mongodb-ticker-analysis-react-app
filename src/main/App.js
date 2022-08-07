@@ -7,6 +7,7 @@ import TickerAnalysisComponent from '../individual-currency/TickerAnalysisCompon
 import Rules from '../rules/Rules'
 import ReportLastPrices from '../report/ReportLastPrices';
 import ReportHourlyWinnersAndLosers from '../report/ReportHourlyWinnersLosers';
+import ReportDailyWinnersAndLosers from '../report/ReportDailyWinnersLosers';
 import TopMenu from './TopMenu'
 import { Container } from 'semantic-ui-react';
 const app = new Realm.App({ id: `${window['getConfig'].REALM_APP_ID}` });
@@ -45,6 +46,7 @@ const App = () => {
             <Route exact path='/rules' render={(props) => <Rules user={user} {...props} /> } ></Route>
             <Route exact path='/reportLastPrices' render={(props) => <ReportLastPrices user={user} {...props} /> } ></Route>
             <Route exact path='/reportHourlyWinnersAndLosers' render={(props) => <ReportHourlyWinnersAndLosers user={user} {...props} /> } ></Route>
+            <Route exact path='/reportDailyWinnersAndLosers' render={(props) => <ReportDailyWinnersAndLosers user={user} {...props} /> } ></Route>
             </Switch>
             <div style={{display:'none'}}>User id: {user.id}</div>
             </Container>
