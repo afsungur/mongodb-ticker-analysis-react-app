@@ -148,8 +148,22 @@ class Rules extends React.Component {
     fetchStatisticsForARule(_id) {
         this.setState({isStatisticQueryRunning: true, isStatisticsLoaded: false})
 
-
-        this.props.user.mongoClient('mongodb-atlas').db('exchange').collection('ruleStatistics').find({"ruleId": ObjectId(_id)}).then(
+//find({"ruleId": ObjectId(_id)}).sort({"time":-1}).limit(1000).then(
+        this.props.user.mongoClient('mongodb-atlas').db('exchange').collection('ruleStatistics').aggregate([
+            {
+                "$match": {
+                    "ruleId": ObjectId(_id)
+                }
+            },
+            {
+                "$sort": {
+                    "time": -1
+                }
+            },
+            {
+                "$limit": 1000
+            }
+        ]).then(
             result => {
                 this.setState({statisticsData: result, isStatisticsLoaded: true, isStatisticQueryRunning: false})
             })
@@ -230,8 +244,12 @@ class Rules extends React.Component {
                                                                     value={this.state.threshold} 
                                                                     onChange={(data) => this.setState({threshold:data})} />
                                                             
-                                                            
-                                                    </Form.Field>        
+                                                    </Form.Field>
+                                                    <Form.Field width={3}>
+                                                            <label>&nbsp;</label>        
+                                                            <br/>
+                                                            <p>{ (this.state.method === "MA" || this.state.method === "EMA") ? "percent of the last price" : "(The calculated RSI value "+this.state.threshold+")" }</p>
+                                                    </Form.Field>
                                                 </Form.Group>            
                                                 
                                                 <Button disabled={this.state.queryIsRunning} color='green' onClick={() => this.saveRule()} >Add Rule</Button>

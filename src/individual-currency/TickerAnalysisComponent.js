@@ -83,7 +83,10 @@ class TickerAnalysisComponent extends React.Component {
                         latestCurrencyDateLocalStr: moment(result.latestCurrencyDate).local().format(),
                         firstCurrencyDateLocalStr: moment(result.firstCurrencyDate).local().format(),
                         totalNumberOfRecords: result.totalNumberOfRecords,
-                        totalNumberOfBuckets: result.totalNumberOfBuckets
+                        totalNumberOfBuckets: result.totalNumberOfBuckets,
+                        compressionRatio: result.compressionRatio,
+                        estimatedRAWSizeOfTheCollectionInBytes: result.estimatedRAWSizeOfTheCollectionInBytes,
+                        compressedDataOnTheDiskInBytes: result.compressedDataOnTheDiskInBytes
                     }
                 });
             }
@@ -365,6 +368,22 @@ class TickerAnalysisComponent extends React.Component {
                                             <Icon name='hashtag' />
                                             Number of Buckets:
                                             <Label.Detail>{  this.state.latestInformation.isQueryRunning ? "Please wait, loading..." : this.state.latestInformation.totalNumberOfBuckets}</Label.Detail>
+                                        </Label>
+                                        <br/>
+                                        <Label>
+                                            <Icon name='hashtag' />
+                                            RAW DataSize in Bytes:
+                                            <Label.Detail>~{  this.state.latestInformation.isQueryRunning ? "Please wait, loading..." : Math.round(this.state.latestInformation.estimatedRAWSizeOfTheCollectionInBytes/1024/1024)} MB</Label.Detail>
+                                        </Label>
+                                        <Label>
+                                            <Icon name='hashtag' />
+                                            Compressed Data Size On Disk in Bytes:
+                                            <Label.Detail>{  this.state.latestInformation.isQueryRunning ? "Please wait, loading..." : Math.round(this.state.latestInformation.compressedDataOnTheDiskInBytes/1024/1024)} MB</Label.Detail>
+                                        </Label>
+                                        <Label>
+                                            <Icon name='hashtag' />
+                                            Compression Ratio:
+                                            <Label.Detail>{  this.state.latestInformation.isQueryRunning ? "Please wait, loading..." : this.state.latestInformation.compressionRatio}</Label.Detail>
                                         </Label>
                                     </Accordion.Content>
                                 </Accordion>
